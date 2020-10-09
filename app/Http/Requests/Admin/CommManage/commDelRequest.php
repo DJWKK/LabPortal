@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Admin\PageContent;
+namespace App\Http\Requests\Admin\CommManage;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class TestRequest extends FormRequest
+class commDelRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,7 @@ class TestRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'comment_id' => 'required|string',
         ];
-    }
-    protected function failedValidation(Validator $validator)
-    {
-        throw (new HttpResponseException(json_fail('参数错误!',$validator->errors()->all(),100)));
     }
 }
